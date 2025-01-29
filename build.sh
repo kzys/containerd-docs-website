@@ -7,9 +7,9 @@ fi
 
 pushd containerd
 git checkout release/2.0
-cp -r docs/* ../content/en/docs/
+cp -r docs/* ../content/
 popd
 
-ruby add-front-matter.rb content/en/docs/*.md
+ruby add-front-matter.rb $(find content/ -name '*.md')
 
 npm run "$1"
